@@ -56,8 +56,21 @@ app.register(require("fastify-cors"), {});
 
 // Definindo as rotas da API
 app.get("/api/tasks", async (request: FastifyRequest, reply: FastifyReply) => {
+  const DEFAULT_PAGE_SIZE = 10;
+  const MAX_PAGE_SIZE = 50;
   try {
-    const tasks = await Todo.find();
+    let { page, size } = request.query as { page?: any, size?: any };
+
+    // Converte para número e define valores padrão se não especificado
+    page = parseInt(page as string) || 1;
+    size = parseInt(size as string) || DEFAULT_PAGE_SIZE;
+
+    // Garante que o tamanho da página esteja dentro do intervalo permitido
+    size = Math.min(Math.max(size, 10), MAX_PAGE_SIZE);
+
+    const skip = (page - 1) * size;
+
+    const tasks = await Todo.find().skip(skip).limit(size);
     reply.send(tasks);
   } catch (err) {
     reply.status(500).send({ message: err });
