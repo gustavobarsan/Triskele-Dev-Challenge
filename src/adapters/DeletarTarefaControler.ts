@@ -1,6 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
 import { DeletarTarefa } from "../core/todo/service/DeletarTarefa";
-import { Query } from "mongoose";
 
 export class DeletarTarefaController {
   constructor(
@@ -15,7 +14,9 @@ export class DeletarTarefaController {
       ) => {
         const { idTarefa } = request.query;
         await this.casoDeUso.executar(idTarefa);
-        
+        return reply.status(200).send({
+          mensagem: "Tarefas deletada",
+        });
       }
     );
   }
