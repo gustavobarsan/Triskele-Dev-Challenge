@@ -8,20 +8,17 @@ export class PostarTarefaController {
     readonly casoDeUso: CriarTarefa
   ) {
     this.servidor.post(
-      "/api/v1/criarTarefa",
+      "/api/v1/tarefa",
       async (
         request: FastifyRequest<{ Body: { tarefa: ITodo } }>,
         reply: FastifyReply
       ) => {
         const { tarefa } = request.body;
         const resp = await this.casoDeUso.executar(tarefa);
-        return {
-            status: 201,
-            body: {
-                mensagem: 'Tarefa criada com sucesso',
-                data: resp
-            }
-        }
+        return reply.status(201).send({
+          mensagem: "Tarefa criada com sucesso",
+          dados: resp,
+        });
       }
     );
   }
