@@ -261,6 +261,27 @@ fast-uri@^2.0.0, fast-uri@^2.1.0:
   resolved "https://registry.yarnpkg.com/fast-uri/-/fast-uri-2.3.0.tgz#bdae493942483d299e7285dcb4627767d42e2793"
   integrity sha512-eel5UKGn369gGEWOqBShmFJWfq/xSJvsgDzgLYC845GneayWvXBf0lJCBn5qTABfewy1ZDPoaR5OZCP+kssfuw==
 
+fastify-plugin@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-3.0.1.tgz#79e84c29f401020f38b524f59f2402103fd21ed2"
+  integrity sha512-qKcDXmuZadJqdTm6vlCqioEbyewF60b/0LOFCcYN1B6BIZGlYJumWWOYs70SFYLDAH4YqdE1cxH/RKMG7rFxgA==
+
+"fastify-websocket-deprecated@npm:fastify-websocket@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/fastify-websocket/-/fastify-websocket-4.2.2.tgz#7fba0edee66d1d056ee900a4e58c8b5fd6af5ef0"
+  integrity sha512-Cx4CZwercvoPq4fc6f09VAoa3wqp9qOQUDHp8wMkCHau4zw7wGa+C3Oi2QNUvhvNqw6N4mH8WWYLEnGXUlnumg==
+  dependencies:
+    fastify-plugin "^3.0.0"
+    ws "^8.0.0"
+
+fastify-websocket@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/fastify-websocket/-/fastify-websocket-4.3.0.tgz#0eec382f4677886f62ae40d695f4f1f122d26dbf"
+  integrity sha512-PLoXjlKHaWOEIJ7tHStM2i8aL4kdYVB8d1Umf7TdpQ93kG7OopO7eV4IAyO545kRiE8pyL1AbjlJeZ7irDA1aA==
+  dependencies:
+    fastify-websocket-deprecated "npm:fastify-websocket@4.2.2"
+    process-warning "^1.0.0"
+
 fastify@^4.26.2:
   version "4.26.2"
   resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.26.2.tgz#9389595c46e9f4648de5bf8175e750bf32fed5a1"
@@ -460,6 +481,11 @@ pino@^8.17.0:
     safe-stable-stringify "^2.3.1"
     sonic-boom "^3.7.0"
     thread-stream "^2.0.0"
+
+process-warning@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/process-warning/-/process-warning-1.0.0.tgz#980a0b25dc38cd6034181be4b7726d89066b4616"
+  integrity sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==
 
 process-warning@^3.0.0:
   version "3.0.0"
@@ -667,6 +693,11 @@ whatwg-url@^13.0.0:
   dependencies:
     tr46 "^4.1.1"
     webidl-conversions "^7.0.0"
+
+ws@^8.0.0:
+  version "8.16.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.16.0.tgz#d1cd774f36fbc07165066a60e40323eab6446fd4"
+  integrity sha512-HS0c//TP7Ina87TfiPUz1rQzMhHrl/SG2guqRcTOIUYD2q8uhUdNHZYJUaQ8aTGPzCh+c6oawMKW35nFl1dxyQ==
 
 ws@~8.11.0:
   version "8.11.0"

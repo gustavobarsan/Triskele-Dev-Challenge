@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/mongoose": "^5.11.97",
     "fastify": "^4.26.2",
+    "fastify-websocket": "^4.3.0",
     "mongoose": "^8.2.3",
     "socket.io": "^4.7.5"
   }
