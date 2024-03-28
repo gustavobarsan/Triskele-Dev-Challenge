@@ -11,7 +11,7 @@ export interface RepositorioTodo {
     obterQntDeTarefasPenCon(): Promise<ITodo[]>;    
 }
 
-type StatusTarefa = {
+export type StatusTarefa = {
     idTarefa: number;
     novoStatus: string;
 }
