@@ -1,4 +1,3 @@
-import { ITodo } from "../model";
 import { RepositorioTodo } from "../repository";
 import CasoDeUso from "../shared/CasoDeUso";
 
