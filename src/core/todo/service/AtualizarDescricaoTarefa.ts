@@ -7,9 +7,9 @@ export type NovaDesc = {
   novaDesc: string
 }
 
-export class AtualizarDescricaoTarefa implements CasoDeUso<NovaDesc, string> {
+export class AtualizarDescricaoTarefa implements CasoDeUso<NovaDesc, any> {
   constructor(private readonly repositorio: RepositorioTodo) {}
-  async executar(entrada: NovaDesc): Promise<string> {
+  async executar(entrada: NovaDesc): Promise<any> {
     const { idTarefa, novaDesc } = entrada;
     const resp = await this.repositorio.atualizarDescricaoTarefa(idTarefa, novaDesc);
     return resp
