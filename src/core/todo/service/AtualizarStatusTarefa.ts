@@ -1,7 +1,7 @@
 import { RepositorioTodo, StatusTarefa } from "../repository";
 import CasoDeUso from "../shared/CasoDeUso";
 
-export class atualizarStatusTarefa implements CasoDeUso<StatusTarefa, boolean> {
+export class AtualizarStatusTarefa implements CasoDeUso<StatusTarefa, boolean> {
   constructor(private readonly repositorio: RepositorioTodo) {}
   async executar(entrada: StatusTarefa): Promise<boolean> {
     const { idTarefa, novoStatus } = entrada;

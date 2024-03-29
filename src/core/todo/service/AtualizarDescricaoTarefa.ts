@@ -1,11 +1,17 @@
 import { ITodo } from "../model";
-import { RepositorioTodo, StatusTarefa } from "../repository";
+import { RepositorioTodo } from "../repository";
 import CasoDeUso from "../shared/CasoDeUso";
 
-export class atualizarDescricaoTarefa implements CasoDeUso<StatusTarefa, void> {
+export type NovaDesc = {
+  idTarefa: number,
+  novaDesc: string
+}
+
+export class AtualizarDescricaoTarefa implements CasoDeUso<NovaDesc, string> {
   constructor(private readonly repositorio: RepositorioTodo) {}
-  async executar(entrada: StatusTarefa): Promise<void> {
-    const { idTarefa, novoStatus } = entrada;
-    await this.repositorio.atualizarDescricaoTarefa(idTarefa, novoStatus);
+  async executar(entrada: NovaDesc): Promise<string> {
+    const { idTarefa, novaDesc } = entrada;
+    const resp = await this.repositorio.atualizarDescricaoTarefa(idTarefa, novaDesc);
+    return resp
   }
 }

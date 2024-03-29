@@ -1,16 +1,15 @@
 import {
   FastifyInstance,
   FastifyRequest,
-  RouteShorthandOptions,
 } from "fastify";
-import { atualizarStatusTarefa } from "../core/todo/service/AtualizarStatusTarefa";
+import { AtualizarStatusTarefa } from "../core/todo/service/AtualizarStatusTarefa";
 import websocket from "@fastify/websocket";
 import { StatusTarefa } from "../core/todo/repository";
 
 export class AtualizarStatusTarefaController {
   constructor(
     readonly servidor: FastifyInstance,
-    readonly casoDeUso: atualizarStatusTarefa
+    readonly casoDeUso: AtualizarStatusTarefa
   ) {
     this.servidor.register(websocket, { options: { maxPayload: 123452 } });
     this.servidor.patch(
