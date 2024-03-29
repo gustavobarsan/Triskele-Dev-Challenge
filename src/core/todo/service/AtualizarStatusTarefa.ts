@@ -1,10 +1,10 @@
 import { RepositorioTodo, StatusTarefa } from "../repository";
 import CasoDeUso from "../shared/CasoDeUso";
 
-export class atualizarStatusTarefa implements CasoDeUso<StatusTarefa, void> {
+export class atualizarStatusTarefa implements CasoDeUso<StatusTarefa, boolean> {
   constructor(private readonly repositorio: RepositorioTodo) {}
-  async executar(entrada: StatusTarefa): Promise<void> {
+  async executar(entrada: StatusTarefa): Promise<boolean> {
     const { idTarefa, novoStatus } = entrada;
-    await this.repositorio.atualizarStatusTarefa(idTarefa, novoStatus);
+    return await this.repositorio.atualizarStatusTarefa(idTarefa, novoStatus);
   }
 }

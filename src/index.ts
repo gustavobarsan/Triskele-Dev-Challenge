@@ -30,9 +30,9 @@ const Todo = mongoose.model<ITodo>("Todo", TodoSchema);
 
 // Conectando ao MongoDB
 mongoose
-  .connect("mongodb://localhost:27017/todoapp")
-  .then(() => console.log("Conectado ao MongoDB"))
-  .catch((err) => console.error("Erro ao conectar ao MongoDB:", err));
+.connect("mongodb://localhost:27017/todoapp")
+.then(() => console.log("Conectado ao MongoDB"))
+.catch((err) => console.error("Erro ao conectar ao MongoDB:", err));
 
 // Criando a instância do servidor Fastify
 const app: FastifyInstance = fastify({ logger: true });

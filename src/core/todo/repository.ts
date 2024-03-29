@@ -2,7 +2,7 @@ import { ITodo } from "./model";
 
 export interface RepositorioTodo {
     atualizarDescricaoTarefa(idTarefa: number, novaDesc: string): Promise<void>;
-    atualizarStatusTarefa(idTarefa: number, novoStatus: any): Promise<void>;
+    atualizarStatusTarefa(idTarefa: number, novoStatus: any): Promise<boolean>;
     completarTarefasEmLote(lista: StatusTarefa[]): Promise<void>;
     criarTarefa(tarefa: ITodo): Promise<ITodo>;
     deletarTarefa(idTarefa: number): Promise<void>; 

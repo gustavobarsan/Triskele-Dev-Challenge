@@ -1,5 +1,4 @@
 import { app } from "./external/api/fastify";
-
 app.listen({ port: 3000 }, (err, address) => {
     if(err) {
         console.error(err);

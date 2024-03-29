@@ -10,10 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fastify/websocket": "^10.0.1",
     "@types/mongoose": "^5.11.97",
     "fastify": "^4.26.2",
     "fastify-websocket": "^4.3.0",
     "mongoose": "^8.2.3",
     "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.10"
   }
 }
