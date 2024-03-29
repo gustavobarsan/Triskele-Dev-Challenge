@@ -18,7 +18,7 @@ export class RepositorioTodoMongo implements RepositorioTodo {
 
   constructor() {
     mongoose.connect(process.env.MONGO_URL!);
-    this.mongoClientTodo = mongoose.model<TodoDocument>("Todo", todoSchema);
+    this.mongoClientTodo = mongoose.model<TodoDocument>("todo", todoSchema);
   }
 
   async atualizarDescricaoTarefa(
