@@ -56,4 +56,4 @@ Com yarn:
 yarn start
 ```
 
-Isso iniciará o servidor, e você estará pronto para começar o desenvolvimento!
+Isso iniciará o servidor.
