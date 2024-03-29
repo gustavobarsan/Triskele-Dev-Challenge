@@ -15,6 +15,9 @@ import { ObterQntDeTarefasPenCon } from "./core/todo/service/ObterQntDeTarefasPe
 import { app } from "./external/api/fastify";
 import { RepositorioTodoMongo } from "./external/db/mongoose/RepositorioTodoMongo";
 
+import websocket from "@fastify/websocket";
+app.register(websocket);
+
 const repositorioTodo = new RepositorioTodoMongo();
 
 const criarTarefa = new CriarTarefa(repositorioTodo);
